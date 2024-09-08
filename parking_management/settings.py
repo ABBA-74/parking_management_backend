@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'dj_rest_auth',
     'phonenumber_field',
     'user_management',
 ]
@@ -107,6 +108,39 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+REST_FRAMEWORK = {
+    # Authentification par Token, utilisé pour les endpoints protégés
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    
+    # Permissions globales par défaut (Par défaut, les endpoints nécessitent l'authentification)
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',  
+    ],
+    
+    # Pagination par défaut
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+
+    # Pour autoriser les navigateurs à explorer les API (utile en développement)
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+
+    # Gestion des formats de requêtes
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+    ],
+
+    # Gestion des erreurs détaillées
+    'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
+
+    # Autoriser des méthodes supplémentaires comme PUT et DELETE via les formulaires HTML
+    'DEFAULT_METADATA_CLASS': 'rest_framework.metadata.SimpleMetadata',
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

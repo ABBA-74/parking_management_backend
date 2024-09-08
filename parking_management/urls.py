@@ -28,4 +28,5 @@ router.registry.extend(user_management_router.registry)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
+    path('auth/', include('dj_rest_auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
