@@ -50,4 +50,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('auth/', include('dj_rest_auth.urls')),
     path('api/', include('pricing.urls')),
+    path('api/', include('parking_spot.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

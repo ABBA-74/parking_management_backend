@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'user_management',
     'pricing',
+    'parking_spot',
 ]
 
 MIDDLEWARE = [

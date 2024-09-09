@@ -4,11 +4,12 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 from user_management.serializers import UserSerializer
 from rest_framework.permissions import IsAuthenticated
-# Create your views here.
+from drf_yasg.utils import swagger_auto_schema 
+
 class UserDetailView(viewsets.ViewSet):
     
-    # permission_classes = (IsAuthenticated, )
+    @swagger_auto_schema(operation_description="List of information on logged-in users", tags=["Profile"])
     def list(self, request):
-        user = User.objects.get(username=request.user)
+        user = request.user
         user_data = UserSerializer(user, context={'request': request}).data
         return Response(user_data)
