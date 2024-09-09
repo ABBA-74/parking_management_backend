@@ -8,7 +8,7 @@ class Pricing(models.Model):
     end_time = models.TimeField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)  # Admin qui a créé ou modifié, peut être nul
 
     def __str__(self):
         return self.name
