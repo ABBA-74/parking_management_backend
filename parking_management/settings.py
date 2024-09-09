@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     'phonenumber_field',
     'user_management',
+    'pricing',
 ]
 
 MIDDLEWARE = [
