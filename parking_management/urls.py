@@ -29,4 +29,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('auth/', include('dj_rest_auth.urls')),
+    path('api/', include('pricing.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
