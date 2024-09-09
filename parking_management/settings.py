@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'user_management',
     'pricing',
     'parking_spot',
+    'ticket',
 ]
 
 MIDDLEWARE = [
