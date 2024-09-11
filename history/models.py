@@ -8,5 +8,8 @@ class History(models.Model):
     recorded_at = models.DateTimeField(default=timezone.now)
     ticket = models.ForeignKey(Ticket, on_delete=models.SET_NULL, null=True, blank=True)
     
+    class Meta:
+        verbose_name_plural = "Histories"  # Spécifie le pluriel correct
+
     def __str__(self):
         return f'{self.event_type} - {self.ticket}'
