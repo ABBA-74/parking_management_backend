@@ -18,14 +18,10 @@ class Ticket(models.Model):
         # Générer le ticket_number si non présent
         if not self.ticket_number:
             now = datetime.now()
-            date_part = now.strftime('%y%m%d%f')[:8]  # Format YYMMDDms
-            self.ticket_number = f"P01-{date_part}-XXXX" # Format P01-AAMMDD-XXXX Provisoire
+            date_part = now.strftime('%y%m%d%f')[:9]  # Format YYMMDDms
+            self.ticket_number = f"P01-{date_part}"
         
         super().save(*args, **kwargs)
-        
-        if "XXXX" in self.ticket_number:
-            self.ticket_number = self.ticket_number.replace("XXXX", str(self.id))
-            super().save(update_fields=['ticket_number'])
             
     def __str__(self):
         return f"Ticket n°{self.ticket_number}"
