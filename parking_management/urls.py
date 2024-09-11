@@ -52,4 +52,5 @@ urlpatterns = [
     path('api/', include('pricing.urls')),
     path('api/', include('parking_spot.urls')),
     path('api/', include('ticket.urls')),
+    path('api/', include('history.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
