@@ -1,12 +1,12 @@
 from django.test import TestCase
 from .models import History
 from ticket.models import Ticket
-from datetime import datetime
+from django.utils import timezone
 
 class HistoryModelTest(TestCase):
 
     def setUp(self):
-        self.ticket = Ticket.objects.create(ticket_number="P01-2409112395", entry_time=datetime.now(),)
+        self.ticket = Ticket.objects.create(ticket_number="P01-2409112395", entry_time=timezone.now(),)
         self.history = History.objects.create(
             event_type="Modification",
             description="Le ticket a été modifié",
