@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from .models import Ticket
 from parking_spot.models import ParkingSpot
 from user_management.models import CustomUser
-from datetime import datetime
+from django.utils import timezone
 
 class TicketModelTest(TestCase):
 
@@ -14,7 +14,7 @@ class TicketModelTest(TestCase):
 
         self.ticket = Ticket.objects.create(
             ticket_number="P01-2409112395",
-            entry_time=datetime.now(),
+            entry_time=timezone.now(),
             license_plate="ABC123",
             parking_spot=self.parking_spot,
             user=self.user
