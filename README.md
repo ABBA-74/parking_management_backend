@@ -42,3 +42,52 @@ DATABASES = {
     }
 }
 ```
+
+
+## Installation du projet django-backend
+
+1. Clonez le projet :
+    ```bash
+    git clone https://github.com/parking_management_backend.git
+    cd parking_management_backend
+    ```
+<br/>
+
+2. Créez un environnement virtuel :
+    ```python
+    py -m venv .venv
+    ```
+
+<br/>
+
+3. Activez l'environnement virtuel :
+
+    - Sous Windows :
+    ```bash
+    source .venv\Scripts\activate
+    ```
+    - Sous Linux/macOS :
+    ```bash
+    source .venv/bin/activate
+    ```
+<br/>
+
+4. Installez les dépendances :
+    ```bash
+    pip install -r requirements.txt
+    ```
+<br/>
+
+5. Appliquez les migrations pour créer les tables dans la base de données PostgreSQL :
+
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+<br/>
+
+6. Lancez le serveur de développement :
+
+    ```bash
+    python manage.py runserver
+    ```
