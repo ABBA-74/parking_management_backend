@@ -11,3 +11,8 @@ class CustomUser(models.Model):
     profile_image = models.ImageField(upload_to='profile_images/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        if self.account.first_name and self.account.last_name:
+            return f"{self.account.first_name} {self.account.last_name}"
+        return self.account.username
