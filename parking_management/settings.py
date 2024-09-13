@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'dj_rest_auth',
     'phonenumber_field',
+    'db_setup',
     'user_management',
     'pricing',
     'parking_spot',

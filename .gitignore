@@ -25,8 +25,7 @@ venv.bak/
 *.sqlite3
 db.sqlite3
 /media/*
-!/media/.keep
-!/media/*/.keep
+!/media/profile_images/default_profile.webp
 .env
 *.env
 
