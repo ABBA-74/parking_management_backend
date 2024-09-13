@@ -86,6 +86,15 @@ DATABASES = {
     ```
 <br/>
 
+6. Chargement des Fixtures :
+
+    Chargez toutes les fixtures d'un seul coup en utilisant la commande personnalisée :
+    ```bash
+    python manage.py load_all_fixtures
+    ```
+    Une fois les fixtures chargées, vous pouvez vérifier que les données sont correctement insérées en consultant les tables dans PostgreSQL ou en utilisant l'interface d'administration Django.
+<br/>
+
 6. Lancez le serveur de développement :
 
     ```bash
