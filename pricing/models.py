@@ -22,17 +22,19 @@ class Pricing(models.Model):
         night_pricing = Pricing.objects.filter(name="Nuit").exclude(id=self.id).first()
 
         if self.name == "Nuit":
-            # Gestion spécifique de la nuit (tranche horaire qui traverse minuit)
-            if not (self.end_time <= day_pricing.start_time or self.start_time >= day_pricing.end_time):
-                raise ValidationError("Les horaires de nuit ne doivent pas chevaucher ceux de jour.")
+            if day_pricing:
+                # Gestion spécifique de la nuit (tranche horaire qui traverse minuit)
+                if not (self.end_time <= day_pricing.start_time or self.start_time >= day_pricing.end_time):
+                    raise ValidationError("Les horaires de nuit ne doivent pas chevaucher ceux de jour.")
             
             if self.start_time < time(12, 0):  # Exemple de validation supplémentaire : nuit commence après midi
                 raise ValidationError("L'heure de début de la nuit doit être après midi.")
 
         if self.name == "Jour":
-            # Gestion spécifique du jour (ne traverse pas minuit)
-            if not (self.end_time <= night_pricing.start_time or self.start_time >= night_pricing.end_time):
-                raise ValidationError("Les horaires de jour ne doivent pas chevaucher ceux de nuit.")
+            if night_pricing:
+                # Gestion spécifique du jour (ne traverse pas minuit)
+                if not (self.end_time <= night_pricing.start_time or self.start_time >= night_pricing.end_time):
+                    raise ValidationError("Les horaires de jour ne doivent pas chevaucher ceux de nuit.")
             
             if self.start_time != time(8, 0) or self.end_time != time(20, 0):  # Validation stricte des horaires de jour
                 raise ValidationError("L'horaire de jour doit être entre 08h00 et 20h00.")

@@ -50,3 +50,6 @@ class ParkingSpotManageView(generics.RetrieveUpdateDestroyAPIView):
         if self.request.method == 'DELETE': # Seuls les admins peuvent supprimer
             return [IsAdminUser()]
         return [AllowAny()]
+    
+    def perform_update(self, serializer):
+        serializer.save(user=self.request.user) # Mise à jour du champ user avec l'utilisateur actuel (admin)
