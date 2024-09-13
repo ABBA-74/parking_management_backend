@@ -1,0 +1,30 @@
+[
+    {
+        "model": "user_management.CustomUser",
+        "pk": 1,
+        "fields": {
+            "account": 1,
+            "phone": "+33123456789",
+            "address": "123 rue de la république",
+            "postal_code": "74000",
+            "city": "Annecy",
+            "profile_image": "",
+            "created_at": "2024-01-01T10:00:00Z",
+            "updated_at": "2024-01-01T10:00:00Z"
+        }
+    },
+    {
+        "model": "user_management.CustomUser",
+        "pk": 2,
+        "fields": {
+            "account": 2,
+            "phone": "+33123456789",
+            "address": "45 avenue symfony",
+            "postal_code": "74000",
+            "city": "Annecy",
+            "profile_image": "",
+            "created_at": "2024-01-01T11:00:00Z",
+            "updated_at": "2024-01-01T11:00:00Z"
+        }
+    }
+]
