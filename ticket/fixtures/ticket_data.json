@@ -1,0 +1,28 @@
+[
+    {
+        "model": "ticket.Ticket",
+        "pk": 1,
+        "fields": {
+            "ticket_number": "P01-240913123",
+            "entry_time": "2024-09-13T08:00:00Z",
+            "license_plate": "AD-562-AD",
+            "created_at": "2024-09-13T12:00:00Z",
+            "updated_at": "2024-09-14T12:00:00Z",
+            "parking_spot": 2,
+            "user": 2
+        }
+    },
+    {
+        "model": "ticket.Ticket",
+        "pk": 2,
+        "fields": {
+            "ticket_number": "P01-240913124",
+            "entry_time": "2024-09-13T08:00:00Z",
+            "license_plate": "AD-562-AD",
+            "created_at": "2024-09-13T12:00:00Z",
+            "updated_at": "2024-09-14T12:00:00Z",
+            "parking_spot": 3,
+            "user": null
+        }
+    }
+]
