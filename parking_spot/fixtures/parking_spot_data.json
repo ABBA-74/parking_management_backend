@@ -1,0 +1,35 @@
+[
+    {
+        "model": "parking_spot.ParkingSpot",
+        "pk": 1,
+        "fields": {
+            "spot_number": "A001",
+            "is_occupied": false,
+            "created_at": "2024-01-01T12:00:00Z",
+            "updated_at": "2024-01-02T12:00:00Z",
+            "user": null
+        }
+    },
+    {
+        "model": "parking_spot.ParkingSpot",
+        "pk": 2,
+        "fields": {
+            "spot_number": "A002",
+            "is_occupied": true,
+            "created_at": "2024-01-02T12:00:00Z",
+            "updated_at": "2024-01-03T12:00:00Z",
+            "user": 2
+        }
+    },
+    {
+        "model": "parking_spot.ParkingSpot",
+        "pk": 3,
+        "fields": {
+            "spot_number": "A003",
+            "is_occupied": true,
+            "created_at": "2024-01-03T12:00:00Z",
+            "updated_at": "2024-01-04T12:00:00Z",
+            "user": 2
+        }
+    }
+]
